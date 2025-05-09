@@ -17,5 +17,5 @@ updates:
           - minor
           - patch
     ignore:
-      dependency-name: "*"
-      update-types: ["version-update:semver-major"]
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
