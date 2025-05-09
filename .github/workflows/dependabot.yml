@@ -13,7 +13,7 @@ permissions:
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.login.user == 'dependabot[bot]' && contains(github.event.pull_request.labels.*.name, 'dependabot')
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && contains(github.event.pull_request.labels.*.name, 'dependabot')
     steps:
       - name: Dependabot metadata
         id: dependabot-metadata
