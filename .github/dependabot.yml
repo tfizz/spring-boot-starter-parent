@@ -19,3 +19,22 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 5
+    labels:
+      - dependabot
+    target-branch: main
+    pull-request-branch-name:
+      separator: "-"
+    groups:
+      development:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      - dependency-name: "*"
+        update-types: [ "version-update:semver-major" ]
