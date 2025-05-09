@@ -1,0 +1,21 @@
+version: 2
+
+updates:
+  - package-ecosystem: maven
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 5
+    labels:
+      - dependabot
+    target-branch: main
+    pull-request-branch-name:
+      separator: "-"
+    groups:
+      development:
+        update-types:
+          - minor
+          - patch
+    ignore:
+      dependency-name: "*"
+      update-types: ["version-update:semver-major"]
